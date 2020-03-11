@@ -1,0 +1,7 @@
+// 表格样式
+.el-table {
+  .el-table__body-wrapper{
+    height: calc(100vh - 300px);
+    overflow-y: auto;
+  }
+}

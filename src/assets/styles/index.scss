@@ -1,0 +1,11 @@
+@import 'element.scss';
+
+.edit-title {
+
+}
+.edit-row {
+  display: flex; align-items: center;
+  .edit-row-label {
+    width: 120px; margin-right: 15px;
+  }
+}

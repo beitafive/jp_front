@@ -1,22 +1,39 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Index from '@/views/index'
+import noPage from '@/views/404'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: Home
+    path: '*',
+    name:  '404',
+    component: noPage,
+    meta: { title: '没有此页面' }
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/',
+    name:  'index',
+    redirect: '/index',
+    component: Index,
+    children: [
+      {
+        path: '/index',
+        name:  '首页',
+        component: () => import('@/views/index/index.vue')
+      },
+      {
+        path: '/order',
+        name:  '预约单',
+        component: () => import('@/views/order/index.vue')
+      },
+      {
+        path: '/goods/:id',
+        name:  '商品详情',
+        component: () => import('@/views/goods/index.vue')
+      }
+    ]
   }
 ]
 
