@@ -29,6 +29,9 @@
         }
         this.$store.dispatch('setScrollTop', scrollTop)
       }
+    },
+    methods: {
+
     }
   }
 </script>

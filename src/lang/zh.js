@@ -12,6 +12,25 @@ export default {
   goods: {
 
   },
+  order: {
+    title: '填写预约单',
+    name: '姓名',
+    pinyin: '拼音',
+    num: '人数',
+    man: '男性',
+    women: '女性',
+    child: '儿童',
+    two_confirm: '',
+    wx: '微信或LINE账号',
+    contact: '联系方式',
+    camera: '是否需要摄影服务',
+    yes: '是',
+    no: '否',
+    from_method: '如何知道本店',
+    pay_method: '支付方式',
+    in_store: '到店支付',
+
+  },
   common: {
     mon: '周一',
     tue: '周二',

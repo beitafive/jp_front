@@ -1,12 +1,8 @@
 export default {
   goods: {
-    list: '',
-    detail: '',
-    edit: ''
+    list: '/frontend/product/list',
+    detail: '/frontend/product/get'
   },
-  order: {
-    list: '',
-    detail: '',
-    edit: ''
-  }
+  banner: '/frontend/banner/list',
+  create_order: '/frontend/product_book/create'
 }

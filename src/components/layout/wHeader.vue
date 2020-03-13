@@ -1,22 +1,21 @@
 <template>
   <div class="w-header w-flex">
-    <!--   fixed -->
     <div class="title-and-operate w-flex" :style="{ background: scrollTop > 55 ? '#fff': '#FDF8F8' }">
-      <img src="@/assets/img/header_logo.png" class="logo" v-if="scrollTop >= 150" />
-      <div class="titles" v-for="(item, index) in titles" :key="index">{{item}}</div>
+      <img src="@/assets/img/header_logo.png" class="logo" v-if="scrollTop >= 150 || $route.path === '/order'" />
+      <div class="titles" v-for="(item) in titles" :key="item">{{item}}</div>
       <choose-lang />
-      <i :class="['iconfont', 'operate-icon', item.className]" v-for="item in operateIcon" :key="item" @click="handleIcon(item)"></i>
+      <i :class="['iconfont', 'operate-icon', item.className]" v-for="(item, index) in operateIcon" :key="index" @click="handleIcon(item)"></i>
     </div>
     <div class="store-card-div">
       <img src="@/assets/img/store_card.png" class="store-card">
     </div>
-    <div class="content w-flex">
+    <div class="content w-flex" v-show="$route.path !== '/order'">
       <img src="@/assets/img/header_logo.png" class="logo" />
       <div class="content-right w-flex">
         <div class="title-and-operate-div"></div>
         <w-swiper />
         <div class="desc w-flex">
-          <span v-for="item in desc" :key="item">{{item}}</span>
+          <span v-for="(item) in desc" :key="item">{{item}}</span>
         </div>
       </div>
     </div>
@@ -50,12 +49,6 @@
     components: {
       wSwiper,
       chooseLang
-    },
-    mounted () {
-      setTimeout(() =>{
-        // eslint-disable-next-line no-console
-        console.log(this.scrollTop)
-      },3000)
     },
     methods: {
       handleIcon (item) {
@@ -98,7 +91,7 @@
     .store-card-div {
       width: 43px; height: 230px; padding-top: 20px; position: relative;
       .store-card {
-        width: 43px; height: 230px; position: fixed; z-index: 1001;
+        width: 43px; height: 230px;
       }
     }
     .content {

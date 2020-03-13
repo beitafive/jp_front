@@ -11,8 +11,8 @@
 <!--        </el-option>-->
 <!--      </el-select>-->
     </div>
-    <div class="week">
-      <div class="week-item"></div>
+    <div class="week w-flex">
+      <div class="week-item" v-for="(item, index) in weekList" :key="index">{{$t(item)}}</div>
     </div>
     <div class="list-box w-flex">
       <div :class="['date-item', item.isMonth ? '' : 'date-item-no-month', item.select ? 'date-item-select' : '', (item.disabled || item.close) ? 'date-item-disabled' : '']" v-for="(item, index) in list" :key="index" @click="selectDate(item, index)">
@@ -43,6 +43,7 @@
       return {
         month: '',
         monthList: [],
+        weekList: ['common.sun', 'common.mon', 'common.tue', 'common.wed', 'common.thu', 'common.fri', 'common.sat'],
         list: [],
         closeList: ['2020-3-14', '2020-3-16']
       }
@@ -73,11 +74,12 @@
       align-items: center;
       justify-content: space-between;
       .title {
-        font-size:13px;
+        font-size:14px;
         font-family:PingFangSC-Medium,PingFang SC;
-        font-weight:500;
+        font-weight: bold;
         color:rgba(19,19,19,1);
         line-height:18px;
+        color: #131313;
       }
       .el-select {
         width: 110px; height: 24px; font-size: 12px;
@@ -86,7 +88,7 @@
     .list-box {
       align-items: center; flex-wrap: wrap;
       .date-item {
-        width: 55px; height: 24px; line-height: 24px; text-align: center; font-size: 12px; margin: 1px 1px 0 0 ; background: #FFFFFF; cursor: pointer; position: relative;
+        width: 55px; height: 24px; line-height: 24px; text-align: center; font-size: 12px; margin: 1px 1px 0 0; background: #FFFFFF; cursor: pointer; position: relative;
       }
       .date-item-close {
         width: 18px; height: 1px; background: #706A68; position: absolute; top: 12px; left: 18px; transform: rotate(30deg);
@@ -103,6 +105,11 @@
       .date-item-select {
         background: #FF575E;
         color: #fff;
+      }
+    }
+    .week {
+      .week-item {
+        width: 55px; height: 24px; line-height: 24px; font-size: 12px; margin: 1px 1px 0 0; background: #F1F1F1;
       }
     }
   }

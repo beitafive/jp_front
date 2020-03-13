@@ -31,6 +31,7 @@
         this.$i18n.locale = item.value
         this.showLang = item.name
         this.show = false
+        window.location.reload()
       }
     }
   }

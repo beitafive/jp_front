@@ -1,9 +1,9 @@
 <template>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">1</div>
-      <div class="swiper-slide">2</div>
-      <div class="swiper-slide">3</div>
+      <div class="swiper-slide" v-for="(item, index) in list" :key="index">
+        <img :src="item.image_url" />
+      </div>
     </div>
     <div class="swiper-pagination"></div>
   </div>
@@ -21,7 +21,7 @@
       }
     },
     mounted () {
-      this.initSwiper()
+      this.getBanner()
     },
     methods: {
       initSwiper () {
@@ -33,8 +33,16 @@
           }
         })
       },
-      getList () {
-
+      getBanner () {
+        this.$http(this.$api.banner).then(res => {
+          // eslint-disable-next-line no-console
+          if (res) {
+            this.list = res.data.list
+            setTimeout(() => {
+              this.initSwiper()
+            }, 300)
+          }
+        })
       }
     }
   }
@@ -42,7 +50,10 @@
 
 <style scoped lang="scss">
   .swiper-container {
-    width: 870px; height: 250px; background: #42b983;
+    width: 870px; height: 250px;
+  }
+  img {
+    width: 870px; height: 250px;
   }
 </style>
 <style>
