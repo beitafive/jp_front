@@ -1,7 +1,7 @@
 <template>
   <div class="w-header w-flex">
     <div class="title-and-operate w-flex" :style="{ background: scrollTop > 55 ? '#fff': '#FDF8F8' }">
-      <img src="@/assets/img/header_logo.png" class="logo" v-if="scrollTop >= 150 || $route.path === '/order'" />
+      <img src="@/assets/img/header_logo.png" class="logo" @click="$router.push('/')" v-if="scrollTop >= 150 || $route.path === '/order'" />
       <div class="titles" v-for="(item) in titles" :key="item">{{item}}</div>
       <choose-lang />
       <i :class="['iconfont', 'operate-icon', item.className]" v-for="(item, index) in operateIcon" :key="index" @click="handleIcon(item)"></i>
@@ -10,7 +10,7 @@
       <img src="@/assets/img/store_card.png" class="store-card">
     </div>
     <div class="content w-flex" v-show="$route.path !== '/order'">
-      <img src="@/assets/img/header_logo.png" class="logo" />
+      <img src="@/assets/img/header_logo.png" class="logo" @click="$router.push('/')" />
       <div class="content-right w-flex">
         <div class="title-and-operate-div"></div>
         <w-swiper />
@@ -86,7 +86,7 @@
       }
     }
     .logo {
-      width: 150px; height: 50px; margin: 0 45px 0 35px;
+      width: 150px; height: 50px; margin: 0 45px 0 35px; cursor: pointer;
     }
     .store-card-div {
       width: 43px; height: 230px; padding-top: 20px; position: relative;

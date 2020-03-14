@@ -4,7 +4,7 @@
       {{info.comment}}
     </div>
     <div class="goods w-flex">
-      <img :src="info.images" />
+      <img :src="info.images" @click="$router.push('/goods/' + info.id)" />
       <div class="goods-info">
         <div class="title">{{info.title}}</div>
         <div></div>
@@ -33,7 +33,7 @@
     .goods {
       align-items: center;
       img {
-        width: 410px; height: 307px; border-radius: 4px;
+        width: 410px; height: 307px; border-radius: 4px; cursor: pointer;
       }
       .goods-info {
         background: #fff; width: 448px; height: 275px; right: 0; position: absolute; box-shadow:0px 0px 40px 0px rgba(165,165,165,0.1);

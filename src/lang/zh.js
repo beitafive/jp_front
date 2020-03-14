@@ -20,7 +20,8 @@ export default {
     man: '男性',
     women: '女性',
     child: '儿童',
-    two_confirm: '',
+    email: 'E-mail',
+    two_confirm: 'E-mail二次确认',
     wx: '微信或LINE账号',
     contact: '联系方式',
     camera: '是否需要摄影服务',
@@ -29,7 +30,18 @@ export default {
     from_method: '如何知道本店',
     pay_method: '支付方式',
     in_store: '到店支付',
-
+    facebook: 'Facebook',
+    magazine: '杂志',
+    blog: '博客',
+    ota: 'OTA平台',
+    web: '搜索引擎',
+    weibo: '微博',
+    line: 'LINE',
+    instragram: 'Instragram',
+    friend: '朋友介绍',
+    other: '其他',
+    remark: '备注',
+    send_btn: '发送预约邮件'
   },
   common: {
     mon: '周一',
@@ -39,6 +51,8 @@ export default {
     fri: '周五',
     sat: '周六',
     sun: '周日',
-    close: '休息'
+    close: '休息',
+    pre_date: '预定日期',
+    time_error: '请选择日期'
   }
 }
