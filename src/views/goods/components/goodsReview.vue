@@ -16,7 +16,7 @@
       list: {
         type: Array,
         default () {
-          return []
+          return [1,2,3]
         }
       },
       index: {

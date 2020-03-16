@@ -1,7 +1,7 @@
 <template>
   <div class="w-header w-flex">
     <div class="title-and-operate w-flex" :style="{ background: scrollTop > 55 ? '#fff': '#FDF8F8' }">
-      <img src="@/assets/img/header_logo.png" class="logo" @click="$router.push('/')" v-if="scrollTop >= 150 || $route.path === '/order'" />
+      <img src="@/assets/img/header_logo.png" class="logo" @click="$router.push('/')" v-if="scrollTop >= 150 || $route.params.goods_id" />
       <div class="titles" v-for="(item) in titles" :key="item">{{item}}</div>
       <choose-lang />
       <i :class="['iconfont', 'operate-icon', item.className]" v-for="(item, index) in operateIcon" :key="index" @click="handleIcon(item)"></i>
@@ -9,7 +9,7 @@
     <div class="store-card-div">
       <img src="@/assets/img/store_card.png" class="store-card">
     </div>
-    <div class="content w-flex" v-show="$route.path !== '/order'">
+    <div class="content w-flex" v-show="!($route.params.goods_id)">
       <img src="@/assets/img/header_logo.png" class="logo" @click="$router.push('/')" />
       <div class="content-right w-flex">
         <div class="title-and-operate-div"></div>

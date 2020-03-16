@@ -44,7 +44,7 @@
             </div>
           </div>
           <div class="table-item w-flex">
-            <div class="table-item-label">{{$t('order.contact')}}</div>
+            <div class="table-item-label">{{$t('order.contact')}} <span>*</span></div>
             <div class="table-item-content">
               <input v-model="info.contection" class="w-input"/>
             </div>
@@ -87,7 +87,7 @@
         <div class="submit-btn" @click="onSubmit">{{$t('order.send_btn')}}</div>
       </div>
     </div>
-    <goods-card />
+    <goods-card :times="dateInfo" :contact="info.contection" />
   </div>
 </template>
 
@@ -136,7 +136,13 @@
         // console.log(this.$refs.calendar.returnDate())
         this.$http(this.$api.create_order, {
           product_id: 14,
-          ...this.info
+          ...this.info,
+          book_at: this.dateInfo.date + ' ' + this.dateInfo.time
+        }).then(res => {
+          if (res) {
+            this.$message.success(this.$t('order.pre_success'))
+            this.$router.go(-1)
+          }
         })
       }
     }

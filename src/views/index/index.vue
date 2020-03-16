@@ -2,7 +2,7 @@
   <div class="luna-index w-flex">
     <goods-nav :list="goodsList" />
     <div class="goods-list">
-      <goods-card v-for="(item, index) in goodsList" :key="index" :id="'goods'+index" :info="item"/>
+      <goods-card v-for="(item, index) in goodsList" :key="index" :id="'goods'+index" :info="item" :index="index"/>
     </div>
   </div>
 </template>

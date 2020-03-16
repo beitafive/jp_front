@@ -24,7 +24,7 @@ const routes = [
         component: () => import('@/views/index/index.vue')
       },
       {
-        path: '/order',
+        path: '/order/:goods_id',
         name:  '预约单',
         component: () => import('@/views/order/index.vue')
       },

@@ -10,7 +10,11 @@ export default {
     contact: '联系方式'
   },
   goods: {
-
+    service_content: '服务内容',
+    goods_content: '套餐内容',
+    fee: '费用',
+    tips: '※基础套餐不含发饰发型服务',
+    tax: '税前'
   },
   order: {
     title: '填写预约单',
@@ -24,6 +28,7 @@ export default {
     two_confirm: 'E-mail二次确认',
     wx: '微信或LINE账号',
     contact: '联系方式',
+    contact_tips: '请填写联系方式',
     camera: '是否需要摄影服务',
     yes: '是',
     no: '否',
@@ -41,7 +46,10 @@ export default {
     friend: '朋友介绍',
     other: '其他',
     remark: '备注',
-    send_btn: '发送预约邮件'
+    send_btn: '发送预约邮件',
+    pre_time: '预约时间',
+    select_pre_time: '请选择预约时间',
+    pre_success: '预约成功'
   },
   common: {
     mon: '周一',

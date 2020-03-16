@@ -10,7 +10,11 @@ export default {
     contact: '連絡先'
   },
   goods: {
-
+    service_content: 'サービス内容',
+    goods_content: 'コース内容',
+    fee: 'コスト',
+    tips: '※基本セットにはヘアメイクサービスは含まれていません',
+    tax: '税引き前'
   },
   order: {
     title: '予約用紙に記入する',
@@ -24,6 +28,7 @@ export default {
     two_confirm: 'E-mail再確認',
     wx: '微信またはLINEアカウント',
     contact: '連絡先',
+    contact_tips: '連絡先を記入してください',
     camera: '撮影サービスが必要かどうか',
     yes: 'は',
     no: 'いいえ',
@@ -41,7 +46,10 @@ export default {
     friend: '友人の紹介',
     other: '他の',
     remark: '备考',
-    send_btn: '予約メールを送る'
+    send_btn: '予約メールを送る',
+    pre_time: '予約時間',
+    select_pre_time: '予約時間を選んでください',
+    pre_success: '予約に成功する'
   },
   common: {
     mon: '月曜日',
